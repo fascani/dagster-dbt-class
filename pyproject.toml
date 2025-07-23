@@ -1,0 +1,58 @@
+[project]
+name = "dagster-and-dbt"
+version = "0.0.1"
+description = "Dagster and dbt"
+readme = "README.md"
+requires-python = ">=3.9,<3.13"
+dependencies = [
+    "dagster==1.11",
+    "dagster-dg-cli",
+    "dagster-webserver",
+    "dagster-cloud",
+    "dagster-duckdb",
+    "dagster-dbt",
+    "dbt-duckdb",
+    "geopandas",
+    "pandas[parquet]",
+    "shapely",
+    "matplotlib",
+    "smart_open[s3]",
+    "s3fs",
+    "smart_open",
+    "boto3",
+    "pyarrow",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "ruff",
+    "pytest",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.setuptools]
+packages = ["dagster_and_dbt"]
+
+[tool.dg]
+directory_type = "project"
+
+[tool.dg.project]
+root_module = "dagster_and_dbt"
+registry_modules = [
+    "dagster_and_dbt.components.*",
+]
+
+[tool.ruff.lint]
+ignore = [
+    "ERA001", # comments are fine for a learning environment
+    "E501",   # Line too long for docstrings
+    "F401",   # unused imports already caught by pylance
+]
+
+fixable = ["ALL"]
+unfixable = [
+    "F401", # dont remove unused imports
+]
