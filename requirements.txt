@@ -1,3 +1,4 @@
+-e .
 dagster==1.11
 dagster-dg-cli
 dagster-webserver
