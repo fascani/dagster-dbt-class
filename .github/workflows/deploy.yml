@@ -48,7 +48,7 @@ jobs:
           python -m pip install pip --upgrade
           cd project-repo
           pip install . --upgrade --upgrade-strategy eager
-          dagster-dbt project prepare-and-package --file dagster_and_dbt/defs/project.py
+          dagster-dbt project prepare-and-package --file src/dagster_and_dbt/defs/project.py
         shell: bash
 
       - name: Python Executable Deploy
