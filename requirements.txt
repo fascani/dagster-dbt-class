@@ -1,0 +1,16 @@
+dagster==1.11
+dagster-dg-cli
+dagster-webserver
+dagster-cloud
+dagster-duckdb
+dagster-dbt
+dbt-duckdb
+geopandas
+pandas[parquet]
+shapely
+matplotlib
+smart_open[s3]
+s3fs
+smart_open
+boto3
+pyarrow
